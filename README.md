@@ -1,1 +1,1 @@
-bu aptalca sevgilime yaptığım saçma bi projedir
+bu sevgilime yaptığım saçma bi projedir
