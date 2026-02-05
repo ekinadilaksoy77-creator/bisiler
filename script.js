@@ -16,20 +16,18 @@ nextBtn.addEventListener('click', () => {
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add('active');
 
-    // Eğer son slayta (Final) gelindiyse
     if (currentSlide === slides.length - 1) {
         nextBtn.innerText = "THIS SHI TUFF";
         
-        // Havai fişekleri patlat!
+        
         launchFireworks();
     } else {
         nextBtn.innerText = "Devam Et";
     }
 });
 
-// Havai Fişek Fonksiyonu
 function launchFireworks() {
-    var duration = 5 * 1000; // 5 saniye sürecek
+    var duration = 5 * 1000;
     var animationEnd = Date.now() + duration;
     var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 10002 };
 
@@ -45,7 +43,6 @@ function launchFireworks() {
       }
 
       var particleCount = 50 * (timeLeft / duration);
-      // Rastgele iki noktadan havai fişek fırlat
       confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
       confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
     }, 250);

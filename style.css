@@ -1,4 +1,4 @@
-/* Genel Font Ayarı */
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&display=swap');
 
 body, html {
@@ -9,13 +9,12 @@ body, html {
     background-color: #000;
 }
 
-/* GİRİŞ EKRANI */
 #welcome-screen {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: 9999;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('giriş-arkaplan.jpg'); /* Karartma artırıldı */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -28,14 +27,14 @@ body, html {
 
 .welcome-content {
     text-align: center;
-    color: #ffffff; /* Yazı tamamen beyaz */
+    color: #ffffff;
 }
 
 .welcome-content h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 4.5rem;
     margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(255, 77, 109, 0.8), 2px 2px 10px #000; /* Çift katmanlı gölge */
+    text-shadow: 0 0 20px rgba(255, 77, 109, 0.8), 2px 2px 10px #000;
 }
 
 .welcome-content p {
@@ -43,7 +42,6 @@ body, html {
     text-shadow: 1px 1px 5px #000;
 }
 
-/* ANA SUNUM */
 #presentation {
     position: relative;
     height: 100vh;
@@ -60,7 +58,6 @@ body, html {
 
 #presentation.show { opacity: 1; }
 
-/* CAM PANEL (Slide) */
 .slide {
     position: absolute;
     display: none;
@@ -70,7 +67,7 @@ body, html {
     width: 85%;
     max-width: 850px;
     height: 75vh;
-    background: rgba(0, 0, 0, 0.4); /* Panelin içini biraz kararttık ki yazılar parlasın */
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(15px);
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -87,11 +84,17 @@ body, html {
     margin-bottom: 25px;
 }
 
-/* GÖRSELLER */
 .image-wrapper {
     display: flex;
     align-items: center;
     gap: 30px;
+}
+
+.photo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .photo-box img {
@@ -108,13 +111,20 @@ body, html {
     font-weight: bold;
     font-size: 1.4rem;
     text-shadow: 2px 2px 5px #000;
-    margin-top: 10px;
+    margin-top: 15px;
     display: block;
+    text-align: center;
 }
 
-.heart-icon { font-size: 4rem; filter: drop-shadow(0 0 10px red); }
+.heart-icon {
+    font-size: 4rem;
+    filter: drop-shadow(0 0 10px red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 
-/* METİN ALANI */
 .text-container p {
     font-size: 1.6rem;
     color: #ffffff;
@@ -123,11 +133,10 @@ body, html {
     margin-top: 20px;
 }
 
-/* BUTONLAR - GÖRÜNÜR VE CANLI */
 .controls {
     position: fixed;
     bottom: 50px;
-    z-index: 10000; /* Butonun her zaman en üstte kalmasını sağlar */
+    z-index: 10000; 
 }
 
 #startBtn, #nextBtn {
@@ -137,7 +146,7 @@ body, html {
     cursor: pointer;
     border: none;
     border-radius: 50px;
-    background: #ff4d6d; /* Canlı pembe */
+    background: #ff4d6d;
     color: white;
     box-shadow: 0 10px 30px rgba(255, 77, 109, 0.5);
     transition: 0.3s;
@@ -149,15 +158,11 @@ body, html {
     background: #ff758f;
 }
 
-/* --- FİNAL SAYFASI ÖZEL DÜZENLEMELERİ --- */
-
-/* İçeriği yukarı çekerek butona yer açıyoruz */
 #slide-final {
     justify-content: flex-start !important;
     padding-top: 50px;
 }
 
-/* Fotoğraf ve metni yan yana getiren konteynır */
 .final-container {
     display: flex;
     align-items: flex-start;
@@ -167,7 +172,6 @@ body, html {
     margin-top: 20px;
 }
 
-/* Sol taraf: Kare Foto ve İsim */
 .final-photo-wrapper {
     display: flex;
     flex-direction: column;
@@ -179,7 +183,7 @@ body, html {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 20px; /* İstediğin kare form */
+    border-radius: 20px;
     border: 5px solid #ffffff;
     box-shadow: 0 0 25px rgba(255, 77, 109, 0.6);
 }
@@ -192,7 +196,6 @@ body, html {
     text-shadow: 2px 2px 10px #000;
 }
 
-/* Sağ taraf: Açıklama Metni */
 .final-description {
     max-width: 350px;
     text-align: left;
@@ -208,13 +211,11 @@ body, html {
     font-weight: 300;
 }
 
-/* Hızlı belirmesi için özel gecikme */
 .delay-fast {
     opacity: 0;
     animation: fadeIn 0.6s forwards 0.8s;
 }
 
-/* Mobil uyumluluk: Ekran küçükse alt alta gelsin */
 @media (max-width: 768px) {
     .final-container {
         flex-direction: column;
@@ -230,7 +231,6 @@ body, html {
     }
 }
 
-/* Animasyonlar (Aynı kalıyor) */
 @keyframes zoomIn { from { opacity: 0; scale: 0.8; } to { opacity: 1; scale: 1; } }
 .fade-in { opacity: 0; animation: fadeIn 0.8s forwards 0.5s; }
 .delay-1 { opacity: 0; animation: fadeIn 0.8s forwards 1.2s; }
